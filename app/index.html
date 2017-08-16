@@ -2,7 +2,7 @@
 <html ng-app="blocJams">
 <head lang="en">
      <meta charset="UTF-8">
-     <title>Bloc Jams Angular</title>
+     <title>Bloc Jams</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
      <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -14,15 +14,20 @@
      <link rel="stylesheet" type="text/css" href="styles/player_bar.css">
  </head>
 <body>
-  <nav class="navbar"><!-- navigation bar-->
-           <a href="index.html" class="logo">
+  <nav class="navbar">
+           <a ui-sref="index" class="logo">
              <img src="assets/images/bloc_jams_logo.png" alt="bloc jams logo" class="logo">
            </a>
            <div class="links-container">
-             <a href="collection.html" class="navbar-link">collection</a>
+             <a ui-sref="collection" class="navbar-link">collection</a>
            </div>
       </nav>
+
+      <ui-view></ui-view>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
     <script src="/scripts/app.js"></script>
 </body>
 </html>
