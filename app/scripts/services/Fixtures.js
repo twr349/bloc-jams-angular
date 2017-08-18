@@ -42,7 +42,7 @@
       collectionAlbums.push(angular.copy(albumPicasso));
        }
        return collectionAlbums;
-     }
+     };
 
     return Fixtures;
   }
