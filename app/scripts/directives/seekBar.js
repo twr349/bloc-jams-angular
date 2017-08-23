@@ -67,7 +67,7 @@
                   });
               };
 
-              var notifyOnChange = function(newValue) {
+              var notifyOnChange = function(dog) {
                 if (typeof scope.onChange === 'function') {
                     scope.onChange({value: newValue});
                 }
@@ -83,6 +83,3 @@
         .module('blocJams')
         .directive('seekBar', ['$document', seekBar]);
 })();
-/**
-test
-*/

@@ -83,6 +83,14 @@ var getSongIndex = function(song) {
       SongPlayer.currentTime = null;
 
 /**
+*@desc Current volume.
+*@type {Number}
+*/
+
+      SongPlayer.volume = Number;
+
+
+/**
 *@desc Checks to see if currentSong is the song playing
 *@type {object}
 */
@@ -155,6 +163,18 @@ var getSongIndex = function(song) {
       SongPlayer.setCurrentTime = function(time) {
           if (currentBuzzObject) {
             currentBuzzObject.setTime(time);
+          }
+      };
+
+      /**
+      *@function setVolume
+      *@desc Set current volume
+      *@param {Number} volume
+      */
+
+      SongPlayer.setVolume = function(volume) {
+          if (currentBuzzObject) {
+            currentBuzzObject.setVolume(volume);
           }
       };
 
