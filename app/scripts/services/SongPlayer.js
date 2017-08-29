@@ -18,8 +18,7 @@
 */
         var setSong = function(song) {
           if (currentBuzzObject) {
-            currentBuzzObject.stop();
-            SongPlayer.currentSong = null;
+            stopSong();
           }
 
           currentBuzzObject = new buzz.sound(song.audioUrl, {
@@ -43,10 +42,9 @@
 */
 
       var playSong = function(song) {
-        if (currentBuzzObject) {
           currentBuzzObject.play();
           song.playing = true;
-        }
+
       };
 
   /**
@@ -55,9 +53,9 @@
   *@param {object} song
   */
 
-      var stopSong = function (song) {
+      var stopSong = function(song) {
         currentBuzzObject.stop();
-        song.playing = null;
+        SongPlayer.currentSong.playing = null;
       };
 
 /**
@@ -101,7 +99,7 @@ var getSongIndex = function(song) {
             playSong(song);
     } else if (SongPlayer.currentSong === song) {
       if (currentBuzzObject.isPaused()) {
-          currentBuzzObject.play();
+          playSong(song);
           }
         }
 };
@@ -109,11 +107,10 @@ var getSongIndex = function(song) {
 *@desc If song.playing is true set it to false and pause the music
 *@type {object}
 */
-        SongPlayer.pause = function(song) {
-          song = song || SongPlayer.currentSong;
-            currentBuzzObject.pause();
-            song.playing = false;
-        };
+    SongPlayer.pause = function(song) {
+    currentBuzzObject.pause();
+    SongPlayer.currentSong.playing = false;
+};
 
 /**
 *@desc Plays previous song.
